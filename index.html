@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rady LY | Robotics & AI Engineer</title>
+    <!-- Tailwind CSS for Styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        primary: '#0ea5e9', // Sky blue
+                        secondary: '#8b5cf6', // Violet
+                        dark: '#020617', // Slate 950
+                        card: '#0f172a',  // Slate 900
+                    },
+                    animation: {
+                        'blob': 'blob 7s infinite',
+                    },
+                    keyframes: {
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar for a sleek look */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #020617; }
+        ::-webkit-scrollbar-thumb { background: #0ea5e9; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #38bdf8; }
+        
+        body {
+            background-color: #020617;
+            /* Ambient background gradients */
+            background-image: 
+                radial-gradient(circle at 15% 50%, rgba(14, 165, 233, 0.08), transparent 25%),
+                radial-gradient(circle at 85% 30%, rgba(139, 92, 246, 0.08), transparent 25%);
+            background-attachment: fixed;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #38bdf8, #c084fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .glass-card {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .glass-card:hover {
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(15, 23, 42, 0.8);
+        }
+    </style>
+</head>
+<body class="text-slate-300 font-sans antialiased selection:bg-primary selection:text-white relative">
+
+    <!-- Ambient Animated Blobs -->
+    <div class="fixed inset-0 w-full h-full pointer-events-none z-[-1] overflow-hidden">
+        <div class="absolute top-[-10%] left-[-10%] w-96 h-96 bg-primary/20 rounded-full mix-blend-screen filter blur-[100px] animate-blob"></div>
+        <div class="absolute top-[20%] right-[-10%] w-96 h-96 bg-secondary/20 rounded-full mix-blend-screen filter blur-[100px] animate-blob animation-delay-2000"></div>
+        <div class="absolute bottom-[-20%] left-[20%] w-[500px] h-[500px] bg-blue-900/20 rounded-full mix-blend-screen filter blur-[120px] animate-blob animation-delay-4000"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-dark/80 backdrop-blur-md border-b border-slate-800/50 transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0 font-bold text-xl tracking-wider text-white">
+                    RADY<span class="text-primary">LY</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="hover:text-primary transition-colors font-medium">About</a>
+                    <a href="#skills" class="hover:text-primary transition-colors font-medium">Skills</a>
+                    <a href="#projects" class="hover:text-primary transition-colors font-medium">Projects</a>
+                    <a href="#experience" class="hover:text-primary transition-colors font-medium">Experience</a>
+                    <a href="#education" class="hover:text-primary transition-colors font-medium">Education</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-32 pb-20 md:pt-48 md:pb-32 px-4 relative z-10">
+        <div class="max-w-6xl mx-auto flex flex-col-reverse md:flex-row items-center gap-12">
+            <div class="md:w-2/3 text-center md:text-left">
+                <div class="inline-block px-4 py-1.5 rounded-full border border-primary/30 bg-primary/10 text-primary font-semibold mb-6 tracking-wide text-sm">
+                    <i class="fas fa-rocket mr-2"></i> Available for Opportunities
+                </div>
+                <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-4 tracking-tight">Rady LY</h1>
+                <h2 class="text-2xl md:text-3xl font-light mb-6 text-slate-300">
+                    <span class="gradient-text font-bold">Robotics & Automation Engineer</span> <br> 
+                    Master's Candidate in AI & IoT
+                </h2>
+                <p class="text-lg leading-relaxed mb-8 max-w-2xl mx-auto md:mx-0 text-slate-400">
+                    Bridging the gap between hardware and intelligence. Experienced in integrating advanced software stacks, specializing in <strong>ROS2, Artificial Intelligence, Deep Learning,</strong> and industrial automation.
+                </p>
+                <div class="flex flex-wrap justify-center md:justify-start gap-4">
+                    <a href="https://www.canva.com/design/DAHGLEwsU7U/JlTpOG3o3rQFUqbqRfCliA/view?utm_content=DAHGLEwsU7U&utm_campaign=designshare&utm_medium=link&utm_source=viewer" target="_blank" class="bg-gradient-to-r from-primary to-secondary hover:from-blue-500 hover:to-purple-500 text-white px-8 py-3.5 rounded-xl font-bold transition-all shadow-[0_0_20px_rgba(14,165,233,0.3)] hover:shadow-[0_0_30px_rgba(139,92,246,0.5)] hover:-translate-y-1 flex items-center">
+                        <i class="fas fa-play-circle mr-2 text-xl"></i> Watch Video Portfolio
+                    </a>
+                    <a href="https://github.com/Rady909" target="_blank" class="glass-card hover:bg-white/5 text-white border border-slate-700 px-6 py-3.5 rounded-xl font-medium transition-all hover:-translate-y-1 flex items-center">
+                        <i class="fab fa-github mr-2 text-xl"></i> GitHub
+                    </a>
+                    <a href="https://linkedin.com/in/RADY-LY" target="_blank" class="glass-card hover:bg-white/5 text-white border border-slate-700 px-6 py-3.5 rounded-xl font-medium transition-all hover:-translate-y-1 flex items-center">
+                        <i class="fab fa-linkedin mr-2 text-xl"></i> LinkedIn
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/3 flex justify-center">
+                <!-- Highlighted Profile Photo -->
+                <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-full p-2 overflow-hidden group">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-primary to-secondary rounded-full animate-[spin_4s_linear_infinite] group-hover:animate-[spin_2s_linear_infinite] opacity-75"></div>
+                    <div class="absolute inset-1 bg-dark rounded-full"></div>
+                    <img src="pic101.jpg" alt="Rady LY" class="relative z-10 rounded-full w-full h-full object-cover border-4 border-dark">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-24 relative z-10">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex items-center gap-4 mb-12 justify-center md:justify-start">
+                <div class="h-px w-12 bg-primary"></div>
+                <h2 class="text-3xl md:text-4xl font-bold text-white">Technical <span class="gradient-text">Arsenal</span></h2>
+                <div class="h-px w-12 bg-primary md:hidden"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- AI & ML -->
+                <div class="glass-card p-8 rounded-2xl hover:-translate-y-2 transition-all duration-300 border-t-4 border-t-secondary">
+                    <div class="w-14 h-14 bg-secondary/20 rounded-xl flex items-center justify-center text-secondary text-3xl mb-6 shadow-[0_0_15px_rgba(139,92,246,0.2)]">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">AI & Machine Learning</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 bg-slate-800/80 border border-slate-700/50 rounded-lg text-sm text-slate-300">Deep Learning</span>
+                        <span class="px-3 py-1.5 bg-slate-800/80 border border-slate-700/50 rounded-lg text-sm text-slate-300">PyTorch / TF</span>
+                        <span class="px-3 py-1.5 bg-slate-800/80 border border-slate-700/50 rounded-lg text-sm text-slate-300">Computer Vision</span>
+                        <span class="px-3 py-1.5 bg-slate-800/80 border border-slate-700/50 rounded-lg text-sm text-slate-300">TensorRT</span>
+                    </div>
+                </div>
+
+                <!-- Robotics -->
+                <div class="glass-card p-8 rounded-2xl hover:-translate-y-2 transition-all duration-300 border-t-4 border-t-primary">
+                    <div class="w-14 h-14 bg-primary/20 rounded-xl flex items-center justify-center text-primary text-3xl mb-6 shadow-[0_0_15px_rgba(14,165,233,0.2)]">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">Robotics & Vision</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 bg-slate-800/80 border border-slate-700/50 rounded-lg text-sm text-slate-300">ROS2</span>
+                        <span class="px-3 py-1.5 bg-slate-800/80 border border-slate-700/50 rounded-lg text-sm text-slate-300">Gazebo</span>
+                        <span class="px-3 py-1.5 bg-slate-800/80 border border-slate-700/50 rounded-lg text-sm text-slate-300">3D LiDAR</span>
+                        <span class="px-3 py-1.5 bg-slate-800/80 border border-slate-700/50 rounded-lg text-sm text-slate-300">SLAM</span>
+                    </div>
+                </div>
+
+                <!-- Programming -->
+                <div class="glass-card p-8 rounded-2xl hover:-translate-y-2 transition-all duration-300 border-t-4 border-t-teal-400">
+                    <div class="w-14 h-14 bg-teal-400/20 rounded-xl flex items-center justify-center text-teal-400 text-3xl mb-6 shadow-[0_0_15px_rgba(45,212,191,0.2)]">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">Programming</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 bg-slate-800/80 border border-slate-700/50 rounded-lg text-sm text-slate-300">Python</span>
+                        <span class="px-3 py-1.5 bg-slate-800/80 border border-slate-700/50 rounded-lg text-sm text-slate-300">C++</span>
+                        <span class="px-3 py-1.5 bg-slate-800/80 border border-slate-700/50 rounded-lg text-sm text-slate-300">SQL</span>
+                        <span class="px-3 py-1.5 bg-slate-800/80 border border-slate-700/50 rounded-lg text-sm text-slate-300">FastAPI</span>
+                    </div>
+                </div>
+
+                <!-- DevOps & Tools -->
+                <div class="glass-card p-8 rounded-2xl hover:-translate-y-2 transition-all duration-300 border-t-4 border-t-pink-500">
+                    <div class="w-14 h-14 bg-pink-500/20 rounded-xl flex items-center justify-center text-pink-500 text-3xl mb-6 shadow-[0_0_15px_rgba(236,72,153,0.2)]">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">DevOps & Tools</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 bg-slate-800/80 border border-slate-700/50 rounded-lg text-sm text-slate-300">Docker</span>
+                        <span class="px-3 py-1.5 bg-slate-800/80 border border-slate-700/50 rounded-lg text-sm text-slate-300">Linux</span>
+                        <span class="px-3 py-1.5 bg-slate-800/80 border border-slate-700/50 rounded-lg text-sm text-slate-300">Git</span>
+                        <span class="px-3 py-1.5 bg-slate-800/80 border border-slate-700/50 rounded-lg text-sm text-slate-300">NVIDIA TAO</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-24 relative z-10">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+                <div>
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="h-px w-12 bg-primary"></div>
+                        <h2 class="text-3xl md:text-4xl font-bold text-white">Featured <span class="gradient-text">Showcase</span></h2>
+                    </div>
+                    <p class="text-slate-400 max-w-xl text-lg">Deep dives into algorithms, hardware integrations, and autonomous systems.</p>
+                </div>
+                <a href="https://www.canva.com/design/DAHGLEwsU7U/JlTpOG3o3rQFUqbqRfCliA/view?utm_content=DAHGLEwsU7U&utm_campaign=designshare&utm_medium=link&utm_source=viewer" target="_blank" class="flex items-center gap-2 text-primary hover:text-white transition-colors bg-primary/10 hover:bg-primary/30 px-5 py-2.5 rounded-full border border-primary/30">
+                    <i class="fas fa-play"></i> Watch Full Video Reel
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                
+                <!-- Project 1: Thesis -->
+                <div class="glass-card rounded-2xl overflow-hidden group hover:border-primary/50 transition-all duration-300">
+                    <div class="relative h-72 bg-slate-900 flex items-center justify-center overflow-hidden">
+                        <!-- Gradient Overlay -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/30 to-transparent z-10"></div>
+                        <!-- Dynamic GIF -->
+                        <img src="demo4.gif" alt="3D LiDAR Tracking Visual" class="absolute inset-0 w-full h-full object-cover z-0 opacity-70 group-hover:opacity-100 transition-all duration-500 group-hover:scale-105">
+                    </div>
+                    <div class="p-8 relative z-20 -mt-8">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-2xl font-bold text-white">Real-time 3D Human Detection & Tracking</h3>
+                            <span class="bg-secondary/20 text-secondary border border-secondary/30 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Master Thesis</span>
+                        </div>
+                        <p class="mb-6 text-slate-400 leading-relaxed">
+                            Engineered a highly optimized PointPillars-based human detection system processing sparse 16-channel LiDAR data. Deployed a ROS 2 inference pipeline using NVIDIA TAO Toolkit, achieving superior precision in heavily cluttered indoor environments.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-slate-800 text-primary rounded-md text-xs font-medium border border-slate-700">ROS2</span>
+                            <span class="px-3 py-1 bg-slate-800 text-primary rounded-md text-xs font-medium border border-slate-700">PointPillars</span>
+                            <span class="px-3 py-1 bg-slate-800 text-primary rounded-md text-xs font-medium border border-slate-700">NVIDIA TAO</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: ROS2 Navigation -->
+                <div class="glass-card rounded-2xl overflow-hidden group hover:border-primary/50 transition-all duration-300">
+                    <div class="relative h-72 bg-slate-900 flex items-center justify-center overflow-hidden">
+                        <!-- Gradient Overlay -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/30 to-transparent z-10"></div>
+                        <!-- Dynamic GIF -->
+                        <img src="ITC_demo.gif" alt="SLAM Navigation Demo" class="absolute inset-0 w-full h-full object-cover z-0 opacity-70 group-hover:opacity-100 transition-all duration-500 group-hover:scale-105">
+                    </div>
+                    <div class="p-8 relative z-20 -mt-8">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-2xl font-bold text-white">Real-Time Navigation & SLAM</h3>
+                            <span class="bg-teal-400/20 text-teal-400 border border-teal-400/30 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Bachelor Thesis</span>
+                        </div>
+                        <p class="mb-6 text-slate-400 leading-relaxed">
+                            Developed a robust autonomous navigation and SLAM visualization system using ROS2 on a custom differential robot. Seamlessly integrated 2D and 3D LiDAR sensors for dynamic obstacle avoidance and mapped environments within Gazebo simulations.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-slate-800 text-teal-400 rounded-md text-xs font-medium border border-slate-700">SLAM</span>
+                            <span class="px-3 py-1 bg-slate-800 text-teal-400 rounded-md text-xs font-medium border border-slate-700">Gazebo</span>
+                            <span class="px-3 py-1 bg-slate-800 text-teal-400 rounded-md text-xs font-medium border border-slate-700">Obstacle Avoidance</span>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Project 3: ProdScan -->
+                 <div class="glass-card rounded-2xl p-6 flex flex-col md:flex-row gap-6 items-center hover:bg-slate-800/50 transition-colors border border-slate-800">
+                    <div class="w-full md:w-1/3 h-40 bg-slate-900 rounded-xl flex items-center justify-center border border-slate-700">
+                        <i class="fas fa-barcode text-4xl text-secondary"></i>
+                    </div>
+                    <div class="w-full md:w-2/3">
+                        <div class="flex flex-wrap gap-4 justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-white">ProdScan: AI Product ID System</h3>
+                        </div>
+                        <p class="text-sm text-slate-400 leading-relaxed mb-4">
+                            Designed a full-stack AI identification system integrating Google Gemini API with Flask. Built an automated data pipeline using BeautifulSoup and PostgreSQL for robust data management.
+                        </p>
+                        <div class="flex flex-wrap gap-4 items-center">
+                            <div class="flex gap-2">
+                                <span class="px-2 py-1 bg-slate-800 text-slate-300 rounded text-xs border border-slate-700">Flask</span>
+                                <span class="px-2 py-1 bg-slate-800 text-slate-300 rounded text-xs border border-slate-700">LLM API</span>
+                                <span class="px-2 py-1 bg-slate-800 text-slate-300 rounded text-xs border border-slate-700">PostgreSQL</span>
+                            </div>
+                            <a href="https://github.com/Rady909/Ict720_software_2025.git" target="_blank" class="flex items-center gap-2 text-xs font-bold text-secondary hover:text-white bg-secondary/10 hover:bg-secondary/40 px-3 py-1.5 rounded-lg border border-secondary/20 transition-all">
+                                <i class="fab fa-github text-sm"></i> View Repository
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: Stacker Machine -->
+                <div class="glass-card rounded-2xl p-6 flex flex-col md:flex-row gap-6 items-center hover:bg-slate-800/50 transition-colors border border-slate-800">
+                    <div class="w-full md:w-1/3 h-40 bg-slate-900 rounded-xl flex items-center justify-center border border-slate-700">
+                        <i class="fas fa-cogs text-4xl text-pink-500"></i>
+                    </div>
+                    <div class="w-full md:w-2/3">
+                        <h3 class="text-xl font-bold text-white mb-2">Automatic Stacker Machine</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed mb-4">
+                            Assisted in mechanical design and optimization of an industrial steel stacking machine. Leveraged SolidWorks for precision modeling and established quality control protocols.
+                        </p>
+                        <div class="flex gap-2">
+                            <span class="px-2 py-1 bg-slate-800 text-slate-300 rounded text-xs border border-slate-700">SolidWorks</span>
+                            <span class="px-2 py-1 bg-slate-800 text-slate-300 rounded text-xs border border-slate-700">CAD Modeling</span>
+                            <span class="px-2 py-1 bg-slate-800 text-slate-300 rounded text-xs border border-slate-700">Quality Control</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Redesign (Interactive Cards) -->
+    <section id="experience" class="py-24 relative z-10">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="flex items-center gap-4 mb-16 justify-center md:justify-start">
+                <div class="h-px w-12 bg-primary"></div>
+                <h2 class="text-3xl md:text-4xl font-bold text-white">Professional <span class="gradient-text">Experience</span></h2>
+            </div>
+            
+            <div class="space-y-8">
+                
+                <!-- Experience Item 1 -->
+                <div class="glass-card p-8 rounded-2xl border-l-4 border-l-primary hover:border-l-secondary transition-all duration-300 group">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 border-b border-slate-800 pb-4">
+                        <div>
+                            <h3 class="text-2xl font-bold text-white group-hover:text-primary transition-colors">Master's Researcher</h3>
+                            <p class="text-slate-400 font-medium mt-1"><i class="fas fa-map-marker-alt mr-2 text-primary/70"></i>Kasetsart University, Thailand</p>
+                        </div>
+                        <span class="px-4 py-1.5 bg-primary/10 text-primary rounded-full text-sm font-semibold mt-4 md:mt-0 border border-primary/20 backdrop-blur-sm shadow-[0_0_10px_rgba(14,165,233,0.2)]">
+                            Aug 2024 - Mar 2026
+                        </span>
+                    </div>
+                    <div class="text-slate-300 leading-relaxed mb-6">
+                        Spearheaded advanced 3D LiDAR data processing architectures and optimized object detection pipelines for real-time edge deployment.
+                    </div>
+                    <ul class="space-y-3 text-sm text-slate-400 mb-6">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-primary mt-1 mr-3 text-base"></i> 
+                            <span>Developed robust Python automation scripts for 3D LiDAR dataset processing and KITTI-standard coordinate transformations.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-primary mt-1 mr-3 text-base"></i> 
+                            <span>Engineered enhanced human detection algorithms by integrating RANSAC for ground-plane removal and DBSCAN for object proposal generation.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-primary mt-1 mr-3 text-base"></i> 
+                            <span>Standardized end-to-end training and inference workflows using containerized Docker environments and NVIDIA TAO Toolkit for edge GPUs.</span>
+                        </li>
+                    </ul>
+                    <div class="flex gap-2 flex-wrap pt-4 border-t border-slate-800/50">
+                        <span class="text-xs px-3 py-1.5 bg-slate-900 rounded-lg border border-slate-700 text-slate-300 font-medium">3D LiDAR Processing</span>
+                        <span class="text-xs px-3 py-1.5 bg-slate-900 rounded-lg border border-slate-700 text-slate-300 font-medium">NVIDIA TAO</span>
+                        <span class="text-xs px-3 py-1.5 bg-slate-900 rounded-lg border border-slate-700 text-slate-300 font-medium">Docker Containers</span>
+                        <span class="text-xs px-3 py-1.5 bg-slate-900 rounded-lg border border-slate-700 text-slate-300 font-medium">Python/Bash</span>
+                    </div>
+                </div>
+
+                <!-- Experience Item 2 -->
+                <div class="glass-card p-8 rounded-2xl border-l-4 border-l-teal-400 hover:border-l-primary transition-all duration-300 group">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 border-b border-slate-800 pb-4">
+                        <div>
+                            <h3 class="text-2xl font-bold text-white group-hover:text-teal-400 transition-colors">Research Project Engineer</h3>
+                            <p class="text-slate-400 font-medium mt-1"><i class="fas fa-map-marker-alt mr-2 text-teal-400/70"></i>CMIT Haptics & Robotics Lab</p>
+                        </div>
+                        <span class="px-4 py-1.5 bg-teal-400/10 text-teal-400 rounded-full text-sm font-semibold mt-4 md:mt-0 border border-teal-400/20 backdrop-blur-sm">
+                            Jun 2023 - Sep 2023
+                        </span>
+                    </div>
+                    <ul class="space-y-3 text-sm text-slate-400 mb-6">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-teal-400 mt-1 mr-3 text-base"></i> 
+                            <span>Simulated complex automated workflows for Autonomous Guided Vehicles (AGVs) in Gazebo using core ROS2 pathfinding logic.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-teal-400 mt-1 mr-3 text-base"></i> 
+                            <span>Actively integrated both 3D and 2D LiDAR sensors into the navigation stack to ensure reliable obstacle avoidance and dynamic mapping.</span>
+                        </li>
+                    </ul>
+                    <div class="flex gap-2 flex-wrap pt-4 border-t border-slate-800/50">
+                        <span class="text-xs px-3 py-1.5 bg-slate-900 rounded-lg border border-slate-700 text-slate-300 font-medium">ROS2 Pathfinding</span>
+                        <span class="text-xs px-3 py-1.5 bg-slate-900 rounded-lg border border-slate-700 text-slate-300 font-medium">Gazebo Simulation</span>
+                        <span class="text-xs px-3 py-1.5 bg-slate-900 rounded-lg border border-slate-700 text-slate-300 font-medium">AGV Workflows</span>
+                    </div>
+                </div>
+
+                <!-- Experience Item 3 -->
+                <div class="glass-card p-8 rounded-2xl border-l-4 border-l-slate-500 hover:border-l-slate-400 transition-all duration-300 group">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 border-b border-slate-800 pb-4">
+                        <div>
+                            <h3 class="text-2xl font-bold text-white group-hover:text-slate-300 transition-colors">Project Engineering Intern</h3>
+                            <p class="text-slate-400 font-medium mt-1"><i class="fas fa-map-marker-alt mr-2 text-slate-500/70"></i>Dynamic Engineering Steel</p>
+                        </div>
+                        <span class="px-4 py-1.5 bg-slate-700/30 text-slate-300 rounded-full text-sm font-semibold mt-4 md:mt-0 border border-slate-600/50">
+                            Jun 2022 - Sep 2022
+                        </span>
+                    </div>
+                    <ul class="space-y-3 text-sm text-slate-400 mb-6">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-slate-500 mt-1 mr-3 text-base"></i> 
+                            <span>Assisted mechanical engineering teams in the design phase of a large-scale Automatic Stacker Machine for industrial steel applications.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-slate-500 mt-1 mr-3 text-base"></i> 
+                            <span>Utilized SolidWorks for high-precision component modeling and supported rigorous quality control inspections on the shop floor.</span>
+                        </li>
+                    </ul>
+                    <div class="flex gap-2 flex-wrap pt-4 border-t border-slate-800/50">
+                        <span class="text-xs px-3 py-1.5 bg-slate-900 rounded-lg border border-slate-700 text-slate-300 font-medium">SolidWorks CAD</span>
+                        <span class="text-xs px-3 py-1.5 bg-slate-900 rounded-lg border border-slate-700 text-slate-300 font-medium">Mechanical Design</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Grid -->
+    <section id="education" class="py-24 relative z-10">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex items-center gap-4 mb-16 justify-center md:justify-start">
+                <div class="h-px w-12 bg-primary"></div>
+                <h2 class="text-3xl md:text-4xl font-bold text-white">Global <span class="gradient-text">Education</span></h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Edu 1 -->
+                <div class="glass-card p-8 rounded-2xl hover:bg-slate-800/60 transition-colors">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center text-primary text-xl mb-2">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <span class="text-primary font-bold text-sm bg-primary/10 px-3 py-1 rounded-full border border-primary/20">2024 - 2026</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Master of Engineering in AI & IoT</h3>
+                    <p class="text-slate-400 mb-4 text-sm font-medium"><i class="fas fa-university mr-2"></i>Kasetsart University / TAIST, Thailand</p>
+                    <p class="text-sm text-slate-400 leading-relaxed"><span class="text-slate-200 font-semibold">Specialization:</span> ML architectures, TensorRT deployment, AI Hardware Accelerators, and Real-time IoT Systems.</p>
+                </div>
+
+                <!-- Edu 2 -->
+                <div class="glass-card p-8 rounded-2xl hover:bg-slate-800/60 transition-colors">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-12 h-12 bg-secondary/20 rounded-full flex items-center justify-center text-secondary text-xl mb-2">
+                            <i class="fas fa-globe-asia"></i>
+                        </div>
+                        <span class="text-secondary font-bold text-sm bg-secondary/10 px-3 py-1 rounded-full border border-secondary/20">Fall 2025</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Research Exchange Student</h3>
+                    <p class="text-slate-400 mb-4 text-sm font-medium"><i class="fas fa-university mr-2"></i>Institute of Science Tokyo, Japan</p>
+                    <p class="text-sm text-slate-400 leading-relaxed"><span class="text-slate-200 font-semibold">Specialization:</span> Real-time 3D Human Detection & Tracking. Advanced optimization of PointPillars for LiDAR data.</p>
+                </div>
+
+                <!-- Edu 3 -->
+                <div class="glass-card p-8 rounded-2xl hover:bg-slate-800/60 transition-colors">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-12 h-12 bg-teal-400/20 rounded-full flex items-center justify-center text-teal-400 text-xl mb-2">
+                            <i class="fas fa-globe-europe"></i>
+                        </div>
+                        <span class="text-teal-400 font-bold text-sm bg-teal-400/10 px-3 py-1 rounded-full border border-teal-400/20">Spring 2024</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Engineering Exchange Program</h3>
+                    <p class="text-slate-400 mb-4 text-sm font-medium"><i class="fas fa-university mr-2"></i>ECAM LaSalle, Lyon, France</p>
+                    <p class="text-sm text-slate-400 leading-relaxed"><span class="text-slate-200 font-semibold">Specialization:</span> Automation, Industrial Robotics, Machine Vision, Deep Learning, PLC, and Cobot Motion Planning.</p>
+                </div>
+
+                <!-- Edu 4 -->
+                <div class="glass-card p-8 rounded-2xl hover:bg-slate-800/60 transition-colors">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-12 h-12 bg-slate-500/20 rounded-full flex items-center justify-center text-slate-300 text-xl mb-2">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <span class="text-slate-300 font-bold text-sm bg-slate-700/30 px-3 py-1 rounded-full border border-slate-600">2019 - 2024</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Engineer's Degree in Robotics & Auto.</h3>
+                    <p class="text-slate-400 mb-4 text-sm font-medium"><i class="fas fa-university mr-2"></i>Institute of Technology of Cambodia</p>
+                    <p class="text-sm text-slate-400 leading-relaxed"><span class="text-slate-200 font-semibold">Specialization:</span> Advanced Robotics, Industrial Automation, Wireless Comms, OOP, and Control Systems.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark border-t border-slate-800/50 py-16 text-center relative z-10 mt-12">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-white mb-8">Let's Build the Future Together</h2>
+            <div class="flex justify-center space-x-6 mb-10">
+                <a href="mailto:lyrady909@gmail.com" class="w-14 h-14 rounded-full bg-slate-900 border border-slate-700 flex items-center justify-center text-slate-400 hover:text-primary hover:border-primary hover:bg-primary/10 transition-all duration-300 hover:-translate-y-1">
+                    <i class="fas fa-envelope text-xl"></i>
+                </a>
+                <a href="https://linkedin.com/in/RADY-LY" target="_blank" class="w-14 h-14 rounded-full bg-slate-900 border border-slate-700 flex items-center justify-center text-slate-400 hover:text-[#0077b5] hover:border-[#0077b5] hover:bg-[#0077b5]/10 transition-all duration-300 hover:-translate-y-1">
+                    <i class="fab fa-linkedin text-xl"></i>
+                </a>
+                <a href="https://github.com/Rady909" target="_blank" class="w-14 h-14 rounded-full bg-slate-900 border border-slate-700 flex items-center justify-center text-slate-400 hover:text-white hover:border-slate-500 hover:bg-slate-800 transition-all duration-300 hover:-translate-y-1">
+                    <i class="fab fa-github text-xl"></i>
+                </a>
+            </div>
+            <p class="text-slate-500 text-sm font-medium">
+                &copy; 2026 Rady LY. Built with code & passion. Location: Kandal, Cambodia.
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
